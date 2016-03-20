@@ -1,0 +1,19 @@
+let min lst =
+  match lst with
+  | [] -> [] (* Returns an empty list if given an empty list. *)
+  | h::t -> let rec min_helper h t =
+              match t with
+              | [] -> h (* Returns the minimum element of the list. *)
+              | a::z -> if h < a then min_helper h z
+                        else min_helper a z
+;;
+
+let max lst =
+  match lst with
+  | [] -> [] (* Returns an empty list if given an empty list. *)
+  | h::t -> let rec max_helper h t =
+              match t with
+              | [] -> h (* Returns the maximum element of the list. *)
+              | a::z -> if h > a then max_helper h z
+                        else max_helper a z
+;;
