@@ -1,0 +1,10 @@
+let last list =
+  let front = match list with
+              | [] -> failwith "Empty string."
+              | h::t -> h
+              in
+  let  rec travel list front = 
+    match list with
+      | [] -> front
+      | h::t -> travel t h
+;;
